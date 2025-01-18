@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <title>ChatDonety</title>
   <style>
     body {
-      background-image: url('./chatdonety.webp'); /* Para a mesma pasta */
+      background-image: url('./chatdonety.webp');
       background-size: cover;
       background-position: center;
       font-family: Arial, sans-serif;
@@ -25,55 +25,60 @@
       position: relative;
     }
 
-    .menu-toggle {
+    .menu-button {
       position: absolute;
-      top: 1rem;
       left: 1rem;
-      background-color: white;
-      color: #4CAF50;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
       border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 20px;
+      color: white;
+      font-size: 1.5rem;
       cursor: pointer;
     }
 
-    .questions {
-      display: none;
-      position: absolute;
-      top: 100%;
+    .menu-popup {
+      position: fixed;
+      top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       z-index: 1000;
     }
 
-    .questions ul {
+    .menu-popup ul {
       list-style: none;
-      margin: 0;
-      padding: 1rem;
-    }
-
-    .questions ul li {
-      margin: 0.5rem 0;
-      padding: 0.5rem;
-      background-color: #77DD77;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
+      padding: 0;
       text-align: center;
     }
 
-    .questions ul li:hover {
-      background-color: #4CAF50;
+    .menu-popup ul li {
+      margin: 0.5rem 0;
+      cursor: pointer;
+    }
+
+    .menu-popup .close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     .chat-container {
-      display: flex;
       flex: 1;
+      display: flex;
       flex-direction: column;
+      justify-content: space-between;
       padding: 1rem;
     }
 
@@ -90,7 +95,6 @@
     .input-area {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
     }
 
     .input-area input {
@@ -98,6 +102,7 @@
       padding: 0.5rem;
       border: 1px solid #ddd;
       border-radius: 8px;
+      margin-right: 0.5rem;
     }
 
     .input-area button {
@@ -124,29 +129,31 @@
 </head>
 <body>
   <header>
-    <button class="menu-toggle" onclick="toggleQuestions()">☰</button>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
     <h1>ChatDonety</h1>
-    <div class="questions" id="questions">
-      <ul>
-        <li>Quais são os melhores jogos de PS4/PS5?</li>
-        <li>Que jogo você recomenda de PC?</li>
-        <li>Qual é o melhor jogo para celular?</li>
-        <li>Qual é o melhor jogo para você jogar nesse seu mobilador?</li>
-        <li>Aonde eu consigo achar o melhor canal de vídeos de jogos em 2025 no YouTube?</li>
-        <li>Quem é a melhor mãe de todas?</li>
-        <li>Quem ganhou a season 1 de round6?</li>
-        <li>Qual é o melhor game de todos?</li>
-        <li>Qual é o melhor kit de PC móvel?</li>
-        <li>Qual é a melhor receita?</li>
-        <li>Qual é o jogo mais popular?</li>
-        <li>Qual é a melhor sobremesa?</li>
-        <li>Como começar a jogar Minecraft?</li>
-        <li>Qual é o melhor jogo de simulação?</li>
-        <li>Qual é a melhor fruta, estilo de luta, espada, arma e raça do Blox Fruits?</li>
-        <li>Qual é o melhor sea para farmar muito bounty?</li>
-      </ul>
-    </div>
   </header>
+
+  <div class="menu-popup" id="menuPopup">
+    <button class="close-button" onclick="toggleMenu()">✖</button>
+    <ul>
+      <li>Quais são os melhores jogos de PS4/PS5?</li>
+      <li>Que jogo você recomenda de PC?</li>
+      <li>Qual é o melhor jogo para celular?</li>
+      <li>Qual é o melhor jogo para você jogar nesse seu mobilador?</li>
+      <li>Aonde eu consigo achar o melhor canal de vídeos de jogos em 2025 no YouTube?</li>
+      <li>Quem é a melhor mãe de todas?</li>
+      <li>Quem ganhou a season 1 de Round 6?</li>
+      <li>Qual é o melhor game de todos?</li>
+      <li>Qual é o melhor kit de PC móvel?</li>
+      <li>Qual é a melhor receita?</li>
+      <li>Qual é o jogo mais popular?</li>
+      <li>Qual é a melhor sobremesa?</li>
+      <li>Como começar a jogar Minecraft?</li>
+      <li>Qual é o melhor jogo de simulação?</li>
+      <li>Qual é a melhor fruta, estilo de luta, espada, arma e raça do Blox Fruits?</li>
+      <li>Qual é o melhor sea para farmar muito bounty?</li>
+    </ul>
+  </div>
 
   <div class="chat-container">
     <div class="messages" id="messages">
@@ -154,15 +161,15 @@
     </div>
 
     <div class="input-area">
-      <input type="text" id="userInput" placeholder="FAÇA SUA PERGUNTA LOGO TO ESPERANDO...">
-      <button onclick="sendMessage()">ENVIA LOGO SUA MENSAGEM</button>
+      <input type="text" id="userInput" placeholder="Digite sua pergunta aqui...">
+      <button onclick="sendMessage()">Enviar</button>
     </div>
   </div>
 
   <script>
-    function toggleQuestions() {
-      const questions = document.getElementById('questions');
-      questions.style.display = questions.style.display === 'block' ? 'none' : 'block';
+    function toggleMenu() {
+      const menuPopup = document.getElementById('menuPopup');
+      menuPopup.style.display = menuPopup.style.display === 'flex' ? 'none' : 'flex';
     }
 
     function sendMessage() {
@@ -195,7 +202,7 @@
         case question.includes("ps4"):
           return "Os melhores jogos de PS4/PS5 incluem The Last of Us Part II, God of War, e Red Dead Redemption 2.";
         case question.includes("pc"):
-          return "Recomendo Valorant, Fortnite, Roblox, Minecraft Java Edition, Five Night's at Freddy's no PC.";
+          return "Recomendo Valorant, Fortnite, Roblox, Minecraft Java Edition, Five Nights at Freddy's no PC.";
         case question.includes("celular"):
           return "Melhores jogos para celular: Genshin Impact, Call of Duty Warzone Mobile, EA SPORTS FC: UEFA EURO 2024.";
         case question.includes("mobilador"):
@@ -205,13 +212,13 @@
         case question.includes("mãe"):
           return "A melhor mãe de todas é a sua, ela é muito bonita.";
         case question.includes("round6"):
-          return "Jogador 456, conheço como Ji Hun-son.";
+          return "Jogador 456, conhecido como Ji Hun-son.";
         case question.includes("game"):
-          return "O melhor game de todos é... ASTROBOT... éééééé, O Roblox e Minecraft.";
+          return "O melhor game de todos é... ASTROBOT... éééééé, o Roblox e Minecraft.";
         case question.includes("kit de pc movel"):
-          return "O melhor kit de pc móvel é hub usb 3.0 para poder conectar seus periféricos, teclado 75% para jogar e outras coisas, mouse Attack Shark X6 que é muito bom para jogos, trabalho e tem uma resposta muito rápida, qualquer tripé que você tiver na sua casa serve, um cabo para conectar seu celular ou tablet no hub usb.";
+          return "O melhor kit de PC móvel é hub USB 3.0, teclado 75%, mouse Attack Shark X6, tripé, e cabo USB para conectar seus periféricos.";
         case question.includes("receita"):
-          return "A melhor receita é a panqueca de chocolate. Para fazer esta deliciosa receita, você vai precisar de: 1 ou + ovo, 2 colheres de sopa de Nescau ou Toddy, 2 colheres de farinha, 1 colher de açúcar. Depois, é só mexer tudo e colocar na frigideira por 2 minutos de cada lado, e pronto, você pode confeitar sua panqueca.";
+          return "A melhor receita é a panqueca de chocolate: 1 ovo, 2 colheres de Nescau, 2 colheres de farinha, 1 colher de açúcar, misture e frite por 2 minutos de cada lado.";
         case question.includes("popular"):
           return "Atualmente, Roblox e Minecraft continuam sendo os mais jogados!";
         case question.includes("sobremesa"):
@@ -219,7 +226,7 @@
         case question.includes("minecraft"):
           return "Comece com o modo sobrevivência, construa uma base segura e explore aos poucos.";
         case question.includes("simulação"):
-          return "O melhor jogo de simulação é o The Sims 4. Ele oferece muita personalização e interatividade.";
+           return "O melhor jogo de simulação é o The Sims 4. Ele oferece muita personalização e interatividade.";
         case question.includes("blox fruits"):
           return "A melhor fruta: Dragon, estilo de luta: God Human, Espada: Gravity blade ou ttk, Arma: dragonstorm ou skull guitar, Raça: Draco e Cyborg.";
         case question.includes("sea"):
