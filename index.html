@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatDonety Mobile</title>
+  <style>
+    body {
+      background-image: url('./chatdonety.webp');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 0.5rem;
+    }
+
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .message {
+      margin-bottom: 0.5rem;
+    }
+
+    .user-message {
+      text-align: right;
+      color: #4CAF50;
+    }
+
+    .chatbot-message {
+      text-align: left;
+      color: #333;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .input-area input {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .input-area button {
+      padding: 0.5rem 1rem;
+      background-color: #00FF00;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    ChatDonety
+  </header>
+
+  <div class="chat-container">
+    <div class="messages" id="messages">
+      <!-- Mensagens aparecerão aqui -->
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Digite sua pergunta aqui...">
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const messages = document.getElementById('messages');
+
+      if (input.value.trim() !== "") {
+        // Adicionar mensagem do usuário
+        const userMessage = document.createElement('div');
+        userMessage.classList.add('message', 'user-message');
+        userMessage.innerText = input.value;
+        messages.appendChild(userMessage);
+
+        // Adicionar resposta do chatbot
+        const botMessage = document.createElement('div');
+        botMessage.classList.add('message', 'chatbot-message');
+        botMessage.innerText = getResponse(input.value.trim().toLowerCase());
+        messages.appendChild(botMessage);
+
+        // Limpar o campo de entrada
+        input.value = "";
+
+        // Rolar para o final
+        messages.scrollTop = messages.scrollHeight;
+      }
+    }
+
+    function getResponse(question) {
+      switch (true) {
+        case question.includes("ps4"):
+          return "Os melhores jogos de PS4/PS5 incluem The Last of Us Part II, God of War, e Red Dead Redemption 2.";
+        case question.includes("pc"):
+          return "Recomendo Valorant, Fortnite, Roblox, Minecraft Java Edition, Five Night's at Freddy's no PC.";
+        case question.includes("celular"):
+          return "Melhores jogos para celular: Genshin Impact, Call of Duty Warzone Mobile, EA SPORTS FC: UEFA EURO 2024.";
+        case question.includes("mobilador"):
+          return "Melhores jogos para mobilador: PUBG Mobile, Free Fire ou Minecraft Bedrock Edition.";
+        case question.includes("canal"):
+          return "O melhor canal é o GuxtaZone no YouTube.";
+        case question.includes("mãe"):
+          return "A melhor mãe de todas é a sua, ela é muito bonita.";
+        case question.includes("round6"):
+          return "Jogador 456, conhecido como Ji Hun-son.";
+        case question.includes("game"):
+          return "O melhor game de todos é... ASTROBOT... éééééé, O Roblox e Minecraft.";
+        case question.includes("kit de pc movel"):
+          return "Melhor kit de PC móvel: hub USB 3.0, teclado 75%, mouse Attack Shark X6, tripé e cabos USB.";
+        case question.includes("receita"):
+          return "A melhor receita é a panqueca de chocolate. Ingredientes: 1 ou + ovo, 2 colheres de Nescau, 2 de farinha e 1 de açúcar. Misture tudo e frite por 2 minutos de cada lado.";
+        case question.includes("popular"):
+          return "Atualmente, Roblox e Minecraft continuam sendo os mais jogados!";
+        case question.includes("sobremesa"):
+          return "Panquecas de chocolate são imbatíveis! Simples de fazer e deliciosas.";
+        case question.includes("minecraft"):
+          return "Comece com o modo sobrevivência, construa uma base segura e explore aos poucos.";
+        case question.includes("simulação"):
+          return "O melhor jogo de simulação é o The Sims 4.";
+        case question.includes("blox fruits"):
+          return "Melhor fruta: Dragon, estilo de luta: God Human, espada: Gravity Blade ou TTK, arma: Dragonstorm ou Skull Guitar, raça: Draco e Cyborg.";
+        case question.includes("sea"):
+          return "O melhor sea para farmar bounty é o Sea 3.";
+        default:
+          return "Desculpe, não entendi a sua pergunta. Tente novamente.";
+      }
+    }
+  </script>
+</body>
+</html>
