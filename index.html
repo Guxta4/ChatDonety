@@ -49,7 +49,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      z-index: 1000;
+      z-index: 10000;
     }
 
     .menu-popup ul {
@@ -168,6 +168,7 @@
 
   <script>
     function toggleMenu() {
+      console.log('Menu toggle clicked');  // Verificando o clique no botão de menu
       const menuPopup = document.getElementById('menuPopup');
       menuPopup.style.display = menuPopup.style.display === 'flex' ? 'none' : 'flex';
     }
@@ -177,22 +178,22 @@
       const messages = document.getElementById('messages');
 
       if (input.value.trim() !== "") {
-        // Add user message
+        // Adiciona a mensagem do usuário
         const userMessage = document.createElement('div');
         userMessage.classList.add('message', 'user-message');
         userMessage.innerText = input.value;
         messages.appendChild(userMessage);
 
-        // Determine chatbot response
+        // Resposta do chatbot
         const botMessage = document.createElement('div');
         botMessage.classList.add('message', 'chatbot-message');
         botMessage.innerText = getResponse(input.value.trim().toLowerCase());
         messages.appendChild(botMessage);
 
-        // Clear input
+        // Limpar o input
         input.value = "";
 
-        // Scroll to the bottom
+        // Rolar até a última mensagem
         messages.scrollTop = messages.scrollHeight;
       }
     }
@@ -230,8 +231,8 @@
         case question.includes("blox fruits"):
           return "A melhor fruta: Dragon, estilo de luta: God Human, Espada: Gravity blade ou ttk, Arma: dragonstorm ou skull guitar, Raça: Draco e Cyborg.";
         case question.includes("sea"):
-          return "O melhor sea para caçãr é o sea lá você consegue aprimorar suas habilidade e sua agilidade no pvp.;
-            default:
+          return "O melhor sea para caçãr é o sea lá você consegue aprimorar suas habilidade e sua agilidade no pvp.";
+        default:
           return "Desculpe, não entendi a sua pergunta. Tente novamente.";
       }
     }
