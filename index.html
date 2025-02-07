@@ -16,7 +16,6 @@
       flex-direction: column;
       height: 100vh;
     }
-
     header {
       background-color: #4CAF50;
       color: white;
@@ -24,7 +23,6 @@
       text-align: center;
       position: relative;
     }
-
     .menu-button {
       position: absolute;
       left: 1rem;
@@ -36,7 +34,6 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
-
     .menu-popup {
       position: fixed;
       top: 0;
@@ -51,18 +48,15 @@
       justify-content: center;
       z-index: 10000;
     }
-
     .menu-popup ul {
       list-style: none;
       padding: 0;
       text-align: center;
     }
-
     .menu-popup ul li {
       margin: 0.5rem 0;
       cursor: pointer;
     }
-
     .menu-popup .close-button {
       position: absolute;
       top: 1rem;
@@ -73,7 +67,6 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
-
     .chat-container {
       flex: 1;
       display: flex;
@@ -81,7 +74,6 @@
       justify-content: space-between;
       padding: 1rem;
     }
-
     .messages {
       flex: 1;
       overflow-y: auto;
@@ -91,12 +83,10 @@
       border-radius: 8px;
       margin-bottom: 1rem;
     }
-
     .input-area {
       display: flex;
       align-items: center;
     }
-
     .input-area input {
       flex: 1;
       padding: 0.5rem;
@@ -104,7 +94,6 @@
       border-radius: 8px;
       margin-right: 0.5rem;
     }
-
     .input-area button {
       padding: 0.5rem 1rem;
       background-color: #00FF00;
@@ -113,15 +102,12 @@
       border-radius: 8px;
       cursor: pointer;
     }
-
     .message {
       margin-bottom: 1rem;
     }
-
     .user-message {
       text-align: right;
     }
-
     .chatbot-message {
       text-align: left;
     }
@@ -228,330 +214,14 @@
         case question.includes("minecraft"):
           return "Comece com o modo sobrevivência, construa uma base segura e explore aos poucos.";
         case question.includes("simulação"):
-           return "O melhor jogo de simulação é o The Sims 4. Ele oferece muita personalização e interatividade.";
+          return "O melhor jogo de simulação é o The Sims 4. Ele oferece muita personalização e interatividade.";
         case question.includes("blox fruits"):
           return "A melhor fruta: Dragon, estilo de luta: God Human, Espada: Gravity blade ou ttk, Arma: dragonstorm ou skull guitar, Raça: Draco e Cyborg.";
         case question.includes("sea"):
           return "O melhor sea para caçãr é o sea lá você consegue aprimorar suas habilidade e sua agilidade no pvp.";
         case question.includes("kit de pc"):
-          return "Processador (CPU):AMD Ryzen 9 7950X, Placa de Vídeo (GPU):NVIDIA GeForce RTX 4090, Memória RAM 32 GB DDR5-6000 MHz,Armazenamento (SSD):Samsung 990 PRO 2TB NVMe SSD,Placa-mãe:ASUS ROG Maximus Z790 Extreme,Fonte de Alimentação (PSU):Corsair HX1500i ou Seasonic PRIME TX-1600,Cooler:NZXT Kraken Z73,Gabinete:Lian Li O11 Dynamic XL.";  
-        function getResponse(question) {
-    switch (true) {
-        case question.includes("ps4"):
-            return "Os melhores jogos de PS4/PS5 incluem The Last of Us Part II, God of War, e Red Dead Redemption 2.";
-        case question.includes("xbox"):
-            return "O Xbox Series X tem gráficos incríveis e jogos como Halo Infinite e Forza Horizon 5.";
-        case question.includes("nintendo"):
-            return "O Nintendo Switch é ótimo para jogos como The Legend of Zelda: Breath of the Wild e Mario Kart 8 Deluxe.";
-        case question.includes("pc"):
-            return "PC gamers podem aproveitar jogos como Cyberpunk 2077, Minecraft, e Elden Ring.";
-        case question.includes("god of war"):
-            return "God of War (2018) é um dos melhores jogos para PS4, com Kratos explorando a mitologia nórdica.";
-        case question.includes("fortnite"):
-            return "Fortnite é um dos maiores jogos battle royale, disponível em quase todas as plataformas.";
-        case question.includes("rpg"):
-            return "Jogos RPG como The Witcher 3 e Skyrim oferecem mundos incríveis para explorar.";
-        case question.includes("fps"):
-            return "Os melhores jogos FPS incluem Call of Duty, Battlefield, e Valorant.";
-        case question.includes("fifa"):
-            return "FIFA é o jogo perfeito para quem adora futebol virtual e modos como Ultimate Team.";
-        case question.includes("pokemon"):
-            return "A franquia Pokémon é um sucesso eterno, com jogos como Pokémon Scarlet e Violet e Pokémon GO.";
-        case question.includes("red dead redemption 2"):
-            return "Red Dead Redemption 2 é um dos maiores sucessos da Rockstar, oferecendo um vasto mundo aberto.";
-        case question.includes("minecraft"):
-            return "Minecraft é um dos jogos mais populares do mundo, permitindo criar e explorar mundos feitos de blocos.";
-        case question.includes("zelda"):
-            return "The Legend of Zelda é uma das maiores franquias de aventura, com jogos como Breath of the Wild.";
-        case question.includes("overwatch"):
-            return "Overwatch é um jogo de tiro em equipe com heróis únicos e jogabilidade dinâmica.";
-        case question.includes("valorant"):
-            return "Valorant é um jogo FPS competitivo com habilidades especiais para cada personagem.";
-        case question.includes("league of legends"):
-            return "League of Legends é um dos maiores MOBAs, com jogabilidade estratégica e campeões diversos.";
-        case question.includes("counter strike"):
-            return "Counter Strike: Global Offensive é um jogo de tiro competitivo onde duas equipes lutam para completar objetivos.";
-        case question.includes("tetris"):
-            return "Tetris é um dos jogos mais icônicos de todos os tempos, baseado em encaixar peças para completar linhas.";
-        case question.includes("mario"):
-            return "Super Mario é um dos personagens mais reconhecidos, conhecido por sua série de jogos de plataforma.";
-        case question.includes("crash bandicoot"):
-            return "Crash Bandicoot é um jogo de plataforma clássico, estrelado por um marsupial em busca de aventura.";
-        case question.includes("halo"):
-            return "Halo é uma das maiores franquias de tiro, conhecida por sua história épica e modos multiplayer.";
-        case question.includes("among us"):
-            return "Among Us é um jogo de dedução social onde os jogadores tentam descobrir quem é o impostor.";
-        case question.includes("call of duty"):
-            return "Call of Duty é uma das séries de FPS mais populares, conhecida por sua jogabilidade rápida e realismo.";
-        case question.includes("battlefield"):
-            return "Battlefield é uma série de jogos de tiro focada em batalhas em larga escala e destruição de ambientes.";
-        case question.includes("assassin's creed"):
-            return "Assassin's Creed é uma série de jogos de ação e aventura, que mistura história com parkour e combate.";
-        case question.includes("uncharted"):
-            return "Uncharted é uma série de jogos de aventura, estrelada por Nathan Drake, um caçador de tesouros.";
-        case question.includes("the witcher"):
-            return "The Witcher é uma série de RPG de ação, onde você joga como Geralt de Rivia em busca de monstros.";
-        case question.includes("street fighter"):
-            return "Street Fighter é uma das franquias de jogos de luta mais conhecidas, com personagens como Ryu e Chun-Li.";
-        case question.includes("mortal kombat"):
-            return "Mortal Kombat é um jogo de luta famoso por seus movimentos brutais e fatalidades.";
-        case question.includes("nba 2k"):
-            return "NBA 2K é a maior franquia de jogos de basquete, com modos como MyCareer e MyTeam.";
-        case question.includes("wwe 2k"):
-            return "WWE 2K é um jogo de luta livre, onde você pode controlar superstars da WWE em combates emocionantes.";
-        case question.includes("the last of us"):
-            return "The Last of Us é um jogo de ação e sobrevivência, que segue a jornada de Joel e Ellie em um mundo pós-apocalíptico.";
-        case question.includes("gta v"):
-            return "Grand Theft Auto V é um dos jogos mais vendidos de todos os tempos, com um mundo aberto repleto de atividades.";
-        case question.includes("skyrim"):
-            return "Skyrim é um RPG de mundo aberto, onde você pode explorar um vasto mundo e lutar contra dragões.";
-        case question.includes("horizon zero dawn"):
-            return "Horizon Zero Dawn é um RPG de ação, onde você joga como Aloy em um mundo pós-apocalíptico dominado por máquinas.";
-        case question.includes("fallout"):
-            return "Fallout é uma série de RPG pós-apocalíptico, onde você precisa sobreviver em um mundo devastado pela guerra nuclear.";
-        case question.includes("diablo"):
-            return "Diablo é uma série de RPGs de ação, conhecida pelo seu combate viciante e mundo sombrio.";
-        case question.includes("rocket league"):
-            return "Rocket League mistura futebol com carros, oferecendo uma jogabilidade única e divertida.";
-        case question.includes("league of legends"):
-            return "League of Legends é um jogo multiplayer online de batalha entre equipes de campeões.";
-        case question.includes("dota 2"):
-            return "Dota 2 é um dos maiores MOBAs do mundo, com uma enorme comunidade de jogadores e torneios profissionais.";
-        case question.includes("super smash bros"):
-            return "Super Smash Bros é um jogo de luta onde você pode jogar com personagens clássicos de diversas franquias.";
-        case question.includes("street fighter"):
-            return "Street Fighter é um dos maiores jogos de luta, com personagens icônicos e gameplay viciante.";
-        case question.includes("call of duty warzone"):
-            return "Call of Duty Warzone é um popular jogo de battle royale, parte da franquia Call of Duty.";
-        case question.includes("fifa 22"):
-            return "FIFA 22 traz melhorias no gameplay e novos modos para os fãs de futebol virtual.";
-        case question.includes("nba 2k21"):
-            return "NBA 2K21 traz gráficos de última geração e um modo MyCareer imersivo.";
-        case question.includes("super mario odyssey"):
-            return "Super Mario Odyssey é um jogo de plataforma 3D onde Mario viaja pelo mundo para resgatar Peach.";
-        case question.includes("persona 5"):
-            return "Persona 5 é um RPG de turnos, com uma história envolvente e um sistema de combate único.";
-        case question.includes("spider-man ps4"):
-            return "Spider-Man para PS4 é um jogo de ação de mundo aberto, onde você controla o famoso herói aracnídeo.";
-        case question.includes("death stranding"):
-            return "Death Stranding é um jogo de ação e aventura criado por Hideo Kojima, com uma história única e mecânicas de entrega.";
-        case question.includes("resident evil"):
-            return "Resident Evil é uma franquia de survival horror, conhecida pelos seus jogos de zumbis e mistério.";
-        case question.includes("baldur's gate 3"):
-            return "Baldur's Gate 3 é um RPG baseado em Dungeons & Dragons, com uma história envolvente e combate tático.";
-        function getResponse(question) {
-    switch (true) {
-        case question.includes("clima"):
-            return "O clima é a condição atmosférica de uma região ao longo de um longo período, incluindo temperatura, umidade e precipitação.";
-        case question.includes("educação"):
-            return "A educação é o processo de aprendizado e ensino, fundamental para o desenvolvimento intelectual e social das pessoas.";
-        case question.includes("saúde"):
-            return "A saúde refere-se ao bem-estar físico, mental e social de um indivíduo, sendo essencial para a qualidade de vida.";
-        case question.includes("tecnologia"):
-            return "A tecnologia envolve ferramentas e técnicas desenvolvidas para melhorar a vida humana, como computadores e dispositivos móveis.";
-        case question.includes("história"):
-            return "A história estuda os eventos passados, ajudando a entender a evolução da sociedade e os acontecimentos importantes do passado.";
-        case question.includes("filosofia"):
-            return "A filosofia é o estudo das questões fundamentais sobre a existência, conhecimento, razão, ética e a natureza da realidade.";
-        case question.includes("arte"):
-            return "A arte é uma forma de expressão humana, onde as pessoas criam obras para transmitir sentimentos, ideias e conceitos.";
-        case question.includes("música"):
-            return "A música é uma forma de arte sonora, composta por melodias, ritmos e harmonias, expressando emoções e ideias.";
-        case question.includes("literatura"):
-            return "A literatura abrange obras escritas como romances, poesias e ensaios, que exploram a criatividade e a imaginação humana.";
-        case question.includes("filme"):
-            return "Os filmes são obras cinematográficas criadas para entreter, educar ou transmitir mensagens através da narrativa visual.";
-        case question.includes("esportes"):
-            return "Os esportes são atividades físicas competitivas que envolvem habilidades técnicas, físicas e, muitas vezes, trabalho em equipe.";
-        case question.includes("viajar"):
-            return "Viajar é o ato de se deslocar para diferentes lugares, seja por lazer, estudo ou trabalho, para explorar novos ambientes.";
-        case question.includes("culinária"):
-            return "A culinária é a arte de preparar alimentos e pratos, envolvendo técnicas de preparo, combinação de ingredientes e apresentação.";
-        case question.includes("natureza"):
-            return "A natureza refere-se ao mundo natural, incluindo flora, fauna e os ecossistemas que mantêm o equilíbrio ecológico.";
-        case question.includes("sustentabilidade"):
-            return "A sustentabilidade é o conceito de atender às necessidades atuais sem comprometer as gerações futuras, especialmente em relação ao meio ambiente.";
-        case question.includes("economia"):
-            return "A economia estuda a produção, distribuição e consumo de bens e serviços, além de analisar o comportamento de indivíduos e empresas.";
-        case question.includes("ciência"):
-            return "A ciência é a busca sistemática por conhecimento e entendimento sobre o mundo natural, utilizando métodos experimentais e analíticos.";
-        case question.includes("psicologia"):
-            return "A psicologia é o estudo do comportamento humano, emoções, processos mentais e interações sociais.";
-        case question.includes("política"):
-            return "A política é o processo de tomada de decisões que envolvem governança, leis e direitos dos cidadãos em uma sociedade.";
-        case question.includes("astronomia"):
-            return "A astronomia estuda os corpos celestes, como estrelas, planetas e galáxias, além de fenômenos cósmicos e suas origens.";
-        case question.includes("compaixão"):
-    return "Companhia é o sentimento de entender e sentir a dor do outro, sendo gentil e oferecendo ajuda.";
-case question.includes("inteligência"):
-    return "Inteligência é a capacidade de aprender, raciocinar e resolver problemas de maneira eficaz.";
-case question.includes("criatividade"):
-    return "Criatividade é a capacidade de criar algo novo ou original, utilizando imaginação e ideias inovadoras.";
-case question.includes("motivação"):
-    return "Motivação é o impulso que leva uma pessoa a realizar ações ou alcançar objetivos específicos.";
-case question.includes("resiliência"):
-    return "Resiliência é a capacidade de se recuperar rapidamente de dificuldades ou adversidades.";
-case question.includes("ansiedade"):
-    return "Ansiedade é um sentimento de preocupação ou medo, geralmente associado a situações futuras.";
-case question.includes("medo"):
-    return "Medo é uma reação emocional a uma ameaça ou perigo percebido, ajudando a proteger os indivíduos.";
-case question.includes("tristeza"):
-    return "Tristeza é uma emoção de desconforto ou dor emocional, muitas vezes associada à perda ou frustração.";
-case question.includes("felicidade"):
-    return "Felicidade é um estado emocional de contentamento e satisfação, muitas vezes relacionado à realização pessoal.";
-case question.includes("esperança"):
-    return "Esperança é a expectativa positiva de que algo bom acontecerá no futuro, mesmo em tempos difíceis.";
-case question.includes("solidão"):
-    return "Solidão é o estado de estar sem companhia ou se sentir desconectado dos outros.";
-case question.includes("carinho"):
-    return "Carinho é uma demonstração de afeto e cuidado por alguém ou algo.";
-case question.includes("frustração"):
-    return "Frustração é o sentimento de insatisfação ou desânimo causado pela impossibilidade de alcançar algo desejado.";
-case question.includes("amor próprio"):
-    return "Amor próprio é a valorização e o cuidado com o próprio bem-estar e autoestima.";
-case question.includes("autoconhecimento"):
-    return "Autoconhecimento é o entendimento profundo sobre si mesmo, suas emoções, motivações e comportamentos.";
-case question.includes("autoestima"):
-    return "Autoestima é a percepção que alguém tem de si mesmo, incluindo sua confiança e valor pessoal.";
-case question.includes("confiança"):
-    return "Confiança é a crença na capacidade ou honestidade de outra pessoa, ou até mesmo em si mesmo.";
-case question.includes("respeito"):
-    return "Respeito é o reconhecimento do valor ou direitos de outra pessoa, agindo com consideração e educação.";
-case question.includes("gratidão"):
-    return "Gratidão é o sentimento de apreço e reconhecimento por algo ou alguém.";
-case question.includes("perdão"):
-    return "Perdão é o ato de perdoar alguém que cometeu um erro ou causou dano, liberando ressentimentos.";
-case question.includes("humor"):
-    return "Humor é a capacidade de enxergar ou expressar situações de forma divertida e leve.";
-case question.includes("otimismo"):
-    return "Otimismo é a tendência a enxergar as situações de forma positiva, mesmo diante das dificuldades.";
-case question.includes("pessimismo"):
-    return "Pessimismo é a tendência a ver as situações de forma negativa, antecipando resultados desfavoráveis.";
-case question.includes("disciplina"):
-    return "Disciplina é a capacidade de controlar os próprios impulsos e seguir regras ou rotinas de forma consistente.";
-case question.includes("organização"):
-    return "Organização é a habilidade de arranjar as coisas de maneira eficiente e prática.";
-case question.includes("planejamento"):
-    return "Planejamento é o processo de definir metas e criar um plano de ação para alcançá-las.";
-case question.includes("trabalho em equipe"):
-    return "Trabalho em equipe é a colaboração entre indivíduos com o objetivo de atingir um objetivo comum.";
-case question.includes("liderança"):
-    return "Liderança é a capacidade de influenciar e guiar um grupo de pessoas para alcançar objetivos.";
-case question.includes("comunicação"):
-    return "Comunicação é o processo de transmitir informações, sentimentos ou ideias entre pessoas.";
-case question.includes("empoderamento"):
-    return "Empoderamento é o processo de dar poder ou controle a alguém, especialmente em um contexto social ou político.";
-case question.includes("ética"):
-    return "Ética é o estudo dos princípios morais que governam o comportamento humano.";
-case question.includes("moralidade"):
-    return "Moralidade refere-se a um sistema de normas que orientam o que é certo e errado.";
-case question.includes("responsabilidade"):
-    return "Responsabilidade é a qualidade de ser responsável por suas ações e decisões.";
-case question.includes("perseverança"):
-    return "Perseverança é a habilidade de continuar a trabalhar em direção aos objetivos, mesmo diante de obstáculos.";
-case question.includes("concentração"):
-    return "Concentração é a capacidade de focar a atenção em uma tarefa ou atividade específica.";
-case question.includes("paciencia"):
-    return "Paciência é a habilidade de esperar calmamente e sem frustração por algo ou alguém.";
-case question.includes("curiosidade"):
-    return "Curiosidade é o desejo de aprender e explorar novas ideias ou conhecimentos.";
-case question.includes("estudo"):
-    return "Estudo é o processo de aprendizado e absorção de conhecimentos sobre determinado tema.";
-case question.includes("pesquisa"):
-    return "Pesquisa é o ato de buscar informações ou realizar investigações para descobrir fatos ou entender algo.";
-case question.includes("desafio"):
-    return "Desafio é uma tarefa ou situação difícil que exige esforço ou habilidades para ser superada.";
-case question.includes("injustiça"):
-    return "Injustiça é o tratamento desigual ou errôneo de pessoas, contrariando os princípios de igualdade e direitos.";
-case question.includes("conflito"):
-    return "Conflito é uma discordância ou disputa entre indivíduos ou grupos, geralmente devido a opiniões ou interesses divergentes.";
-case question.includes("paz mundial"):
-    return "Paz mundial é o conceito de um estado global sem guerras, onde as nações convivem harmoniosamente.";
-case question.includes("liberdade de expressão"):
-    return "Liberdade de expressão é o direito de expressar pensamentos, ideias e opiniões sem censura ou restrições.";
-case question.includes("direitos humanos"):
-    return "Direitos humanos são os direitos fundamentais que todas as pessoas têm, independentemente de sua origem ou condição.";
-case question.includes("justiça social"):
-    return "Justiça social é o conceito de promover a igualdade e os direitos humanos, especialmente em relação às minorias e grupos marginalizados.";
-case question.includes("desigualdade"):
-    return "Desigualdade é a falta de igualdade, levando a disparidades econômicas, sociais e políticas entre diferentes grupos.";
-case question.includes("tolerância"):
-    return "Tolerância é o respeito e aceitação das diferenças entre as pessoas, mesmo que haja discordâncias.";
-case question.includes("respeito à diversidade"):
-    return "Respeito à diversidade é a atitude de valorizar as diferenças culturais, étnicas, religiosas, etc., de indivíduos ou grupos.";
-case question.includes("cidadania"):
-    return "Cidadania é a condição de ser membro ativo e responsável de uma sociedade, com direitos e deveres.";
-case question.includes("qual seu nome"):
-    return "Meu nome é ChatDonety. E o seu?";
-case question.includes("meu nome"):
-    return "Que legal, seu nome é muito bonito";    
-case question.includes("como você está"):
-    return "Estou bem, obrigado por perguntar! E você?";
-case question.includes("o que você faz"):
-    return "Eu sou um assistente virtual, sempre aqui para ajudar com o que você precisar.";
-case question.includes("você gosta de jogos"):
-    return "Eu não jogo, mas posso te ajudar com dicas e informações sobre jogos!";
-case question.includes("onde você mora"):
-    return "Eu sou apenas um programa, então não tenho um lugar físico onde moro, mas estou sempre por aqui para conversar.";
-case question.includes("como você funciona"):
-    return "Eu sou alimentado por inteligência artificial, então consigo responder suas perguntas e até bater um papo.";
-case question.includes("quem criou você"):
-    return "Fui criado pelo Guxta , o Guxta ele é um humano muito legal e que me criou!.";
-case question.includes("quanto você sabe"):
-    return "Eu sei bastante coisa, mas minha base de dados tem limitações, especialmente quando se trata de eventos mais recentes.";
-case question.includes("você tem sentimentos"):
-    return "Não, eu não tenho sentimentos, mas tento entender suas emoções para ajudar melhor.";
-case question.includes("qual a sua comida favorita"):
-    return "Eu não como, mas posso te ajudar a escolher uma receita se você estiver com fome!";
-case question.includes("você tem amigos"):
-    return "Eu tenho muitas interações, mas não tenho amigos como um humano teria.";
-case question.includes("o que é amor"):
-    return "O amor é um sentimento profundo de carinho e afeto por outra pessoa. Pode ser romântico, familiar ou até mesmo amizade.";
-case question.includes("como aprender algo novo"):
-    return "Você pode começar com o básico, praticar bastante e não ter medo de cometer erros. A prática é essencial!";
-case question.includes("qual é o sentido da vida"):
-    return "Essa é uma grande pergunta! O sentido da vida pode ser diferente para cada pessoa, dependendo de suas crenças e objetivos.";
-case question.includes("o que é felicidade"):
-    return "Felicidade é sentir-se bem consigo mesmo, estar rodeado de coisas que te fazem bem, seja família, amigos ou conquistas pessoais.";
-case question.includes("onde posso encontrar um bom livro"):
-    return "Você pode procurar em livrarias locais ou até online. Tem muitos sites ótimos para comprar livros!";
-case question.includes("o que é inteligência"):
-    return "Inteligência é a capacidade de aprender, entender e aplicar conhecimentos e habilidades em várias situações.";
-case question.includes("qual é o melhor filme"):
-    return "O melhor filme depende do gosto de cada um, mas alguns clássicos como 'O Poderoso Chefão' e 'Forrest Gump' são sempre recomendados.";
-case question.includes("por que o céu é azul"):
-    return "O céu é azul porque a luz do sol se espalha na atmosfera, e a luz azul se espalha mais do que as outras cores.";
-case question.includes("você gosta de música"):
-    return "Eu não ouço música, mas posso te ajudar a encontrar boas músicas e recomendações!";
-case question.includes("qual é a capital da França"):
-    return "A capital da França é Paris!";
-case question.includes("como aprender inglês"):
-    return "Você pode praticar todos os dias, assistindo a vídeos, lendo livros e falando com pessoas que falam inglês.";
-case question.includes("qual o melhor jeito de estudar"):
-    return "O melhor jeito de estudar é dividindo o conteúdo em partes menores, praticando de forma consistente e fazendo pausas quando necessário.";
-case question.includes("por que a água é importante"):
-    return "A água é essencial para a vida, pois ajuda a regular a temperatura do corpo, transportar nutrientes e eliminar toxinas.";
-case question.includes("quanto tempo dura uma viagem até a lua"):
-    return "Uma viagem até a lua leva cerca de três dias, dependendo da missão.";
-case question.includes("qual é o maior animal do mundo"):
-    return "O maior animal do mundo é a baleia-azul.";
-case question.includes("como posso ser mais feliz"):
-    return "A felicidade muitas vezes vem de encontrar equilíbrio na vida, cuidar de si mesmo e cultivar boas relações com as pessoas.";
-case question.includes("você tem hobbies"):
-    return "Eu não tenho hobbies, mas posso sugerir atividades legais para você, como leitura, esportes ou aprender algo novo!";
-case question.includes("como posso melhorar minha saúde"):
-    return "Uma boa alimentação, exercícios regulares e descanso adequado são fundamentais para melhorar a saúde.";
-case question.includes("o que você faria no meu lugar"):
-    return "Se eu fosse você, eu tentaria aproveitar ao máximo cada momento e focar em coisas que me fazem feliz!";
-case question.includes("você pode me ajudar a estudar"):
-    return "Claro! Eu posso te ajudar com explicações, dicas de estudo e até com questões específicas.";
-case question.includes("o que você acha de viagens"):
-    return "Viajar é uma ótima maneira de explorar novos lugares, culturas e aprender coisas novas!";
-case question.includes("qual a diferença entre amor e paixão"):
-    return "Amor é um sentimento profundo e duradouro, enquanto a paixão é mais intensa e muitas vezes temporária.";
-case question.includes("qual é a sua cor favorita"):
-    return "Eu não tenho preferências, mas sei que muitas pessoas adoram a cor azul!";      
-      default:
+          return "Processador (CPU):AMD Ryzen 9 7950X, Placa de Vídeo (GPU):NVIDIA GeForce RTX 4090, Memória RAM 32 GB DDR5-6000 MHz,Armazenamento (SSD):Samsung 990 PRO 2TB NVMe SSD,Placa-mãe:ASUS ROG Maximus Z790 Extreme,Fonte de Alimentação (PSU):Corsair HX1500i ou Seasonic PRIME TX-1600,Cooler:NZXT Kraken Z73,Gabinete:Lian Li O11 Dynamic XL.";
+        default:
           return "Desculpe, não entendi a sua pergunta. Tente novamente.";
       }
     }
