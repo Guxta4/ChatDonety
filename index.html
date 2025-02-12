@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatDonety</title>
+  <title>ChatDonety - Dark Mode</title>
   <style>
     body {
-      background-image: url('1057011.png');
-      background-size: cover;
-      background-position: center;
+      background-color: #121212;
+      color: #E0E0E0;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -17,8 +16,8 @@
       height: 100vh;
     }
     header {
-      background-color: #121212;
-      color: white;
+      background-color: #00FF7F;
+      color: black;
       padding: 1rem;
       text-align: center;
       position: relative;
@@ -30,7 +29,7 @@
       transform: translateY(-50%);
       background: none;
       border: none;
-      color: white;
+      color: black;
       font-size: 1.5rem;
       cursor: pointer;
     }
@@ -77,9 +76,10 @@
     .messages {
       flex: 1;
       overflow-y: auto;
-      background-color: white;
+      background-color: #1E1E1E;
+      color: #E0E0E0;
       padding: 1rem;
-      border: 1px solid #ddd;
+      border: 1px solid #333;
       border-radius: 8px;
       margin-bottom: 1rem;
     }
@@ -90,26 +90,31 @@
     .input-area input {
       flex: 1;
       padding: 0.5rem;
-      border: 1px solid #ddd;
+      background-color: #333;
+      color: #E0E0E0;
+      border: 1px solid #555;
       border-radius: 8px;
       margin-right: 0.5rem;
     }
     .input-area button {
       padding: 0.5rem 1rem;
-      background-color: #00FF00;
-      color: white;
+      background-color: #39FF14;
+      color: black;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
     }
     .message {
       margin-bottom: 1rem;
     }
     .user-message {
       text-align: right;
+      color: #00FF7F;
     }
     .chatbot-message {
       text-align: left;
+      color: #39FF14;
     }
   </style>
 </head>
@@ -119,33 +124,10 @@
     <h1>ChatDonety</h1>
   </header>
 
-  <div class="menu-popup" id="menuPopup">
-    <button class="close-button" onclick="toggleMenu()">✖</button>
-    <ul>
-      <li>Quais são os melhores jogos de PS4/PS5?</li>
-      <li>Que jogo você recomenda de PC?</li>
-      <li>Qual é o melhor jogo para celular?</li>
-      <li>Qual é o melhor jogo para você jogar nesse seu mobilador?</li>
-      <li>Aonde eu consigo achar o melhor canal de vídeos de jogos em 2025 no YouTube?</li>
-      <li>Quem é a melhor mãe de todas?</li>
-      <li>Qual é o melhor game de todos?</li>
-      <li>Qual é o melhor kit de PC móvel?</li>
-      <li>Qual é a melhor receita?</li>
-      <li>Qual é o jogo mais popular?</li>
-      <li>Qual é a melhor sobremesa?</li>
-      <li>Como começar a jogar Minecraft?</li>
-      <li>Qual é o melhor jogo de simulação?</li>
-      <li>Qual é a melhor fruta, estilo de luta, espada, arma e raça do Blox Fruits?</li>
-      <li>Qual é o melhor sea para farmar muito bounty?</li>
-      <li>Qual são as melhores peças para montar um pc que roda todos os jogos da atualidade?</li>
-    </ul>
-  </div>
-
   <div class="chat-container">
     <div class="messages" id="messages">
       <!-- Messages will appear here -->
     </div>
-
     <div class="input-area">
       <input type="text" id="userInput" placeholder="Digite sua pergunta aqui...">
       <button onclick="sendMessage()">Enviar</button>
@@ -153,83 +135,20 @@
   </div>
 
   <script>
-    function toggleMenu() {
-      console.log('Menu toggle clicked');  // Verificando o clique no botão de menu
-      const menuPopup = document.getElementById('menuPopup');
-      menuPopup.style.display = menuPopup.style.display === 'flex' ? 'none' : 'flex';
-    }
-
     function sendMessage() {
       const input = document.getElementById('userInput');
       const messages = document.getElementById('messages');
-
       if (input.value.trim() !== "") {
-        // Adiciona a mensagem do usuário
         const userMessage = document.createElement('div');
         userMessage.classList.add('message', 'user-message');
         userMessage.innerText = input.value;
         messages.appendChild(userMessage);
-
-        // Resposta do chatbot
         const botMessage = document.createElement('div');
         botMessage.classList.add('message', 'chatbot-message');
-        botMessage.innerText = getResponse(input.value.trim().toLowerCase());
+        botMessage.innerText = "Resposta automática do ChatDonety!";
         messages.appendChild(botMessage);
-
-        // Limpar o input
         input.value = "";
-
-        // Rolar até a última mensagem
         messages.scrollTop = messages.scrollHeight;
-      }
-    }
-
-    function getResponse(question) {
-      switch (true) {
-        case question.includes("ps4"):
-          return "Os melhores jogos de PS4/PS5 incluem The Last of Us Part II, God of War, e Red Dead Redemption 2.";
-        case question.includes("pc"):
-          return "Recomendo Valorant, Fortnite, Roblox, Minecraft Java Edition, Five Nights at Freddy's no PC.";
-        case question.includes("celular"):
-          return "Melhores jogos para celular: Genshin Impact, Call of Duty Warzone Mobile, EA SPORTS FC: UEFA EURO 2024.";
-        case question.includes("mobilador"):
-          return "Quais são os melhores jogos para jogar no seu mobilador: tente PUBG Mobile, Free Fire ou Minecraft Bedrock Edition.";
-        case question.includes("canal"):
-          return "O melhor canal é o GuxtaZone, é um canal de jogos no YouTube que tem no TikTok.";
-        case question.includes("mãe"):
-          return "A melhor mãe de todas é a sua, ela é muito bonita.";
-        case question.includes("round6"):
-          return "Jogador 456, conhecido como Ji Hun-son.";
-        case question.includes("game"):
-          return "O melhor game de todos é... ASTROBOT... éééééé, o Roblox e Minecraft.";
-        case question.includes("movel"):
-          return "O melhor kit de PC móvel é hub USB 3.0, teclado 75%, mouse Attack Shark X6, tripé, e cabo USB para conectar seus periféricos.";
-        case question.includes("receita"):
-          return "A melhor receita é a panqueca de chocolate: 1 ovo, 2 colheres de Nescau, 2 colheres de farinha, 1 colher de açúcar, misture e frite por 2 minutos de cada lado.";
-        case question.includes("popular"):
-          return "Atualmente, Roblox e Minecraft continuam sendo os mais jogados!";
-        case question.includes("sobremesa"):
-          return "Panquecas de chocolate são imbatíveis! Simples de fazer e deliciosas.";
-        case question.includes("minecraft"):
-          return "Comece com o modo sobrevivência, construa uma base segura e explore aos poucos.";
-        case question.includes("simulação"):
-          return "O melhor jogo de simulação é o The Sims 4. Ele oferece muita personalização e interatividade.";
-        case question.includes("blox fruits"):
-          return "A melhor fruta: Dragon, estilo de luta: God Human, Espada: Gravity blade ou ttk, Arma: dragonstorm ou skull guitar, Raça: Draco e Cyborg.";
-        case question.includes("sea/mar"):
-          return "O melhor sea para caçãr é o sea 3 lá você consegue aprimorar suas habilidade e sua agilidade no pvp.";
-        case question.includes("kit"):
-          return "Processador (CPU):AMD Ryzen 9 7950X, Placa de Vídeo (GPU):NVIDIA GeForce RTX 4090, Memória RAM 32 GB DDR5-6000 MHz,Armazenamento (SSD):Samsung 990 PRO 2TB NVMe SSD,Placa-mãe:ASUS ROG Maximus Z790 Extreme,Fonte de Alimentação (PSU):Corsair HX1500i ou Seasonic PRIME TX-1600,Cooler:NZXT Kraken Z73,Gabinete:Lian Li O11 Dynamic XL.";
-        case question.includes("nome"):
-          return "Olá, meu nome é ChatDonety é um prazer te conhecer!.";
-        case question.includes("meu nome"):
-          return "Que legal!, o seu nome é muito bonito.";
-        case question.includes("fazer"):
-          return "Eu consigo fazer diversas coisas como falar com você e responder algumas perguntas bem simples.";
-        case question.includes("boas vindas"):
-          return "Bem-vindo! 🌟 É um grande prazer recebê-lo aqui! Esperamos que sua jornada seja repleta de experiências incríveis, aprendizado e crescimento. Nossa equipe está sempre à disposição para ajudar no que for necessário. Aproveite cada momento, explore todas as possibilidades e sinta-se em casa. Que esta seja uma caminhada de muito sucesso, conquistas e alegria. Seja bem-vindo e desfrute ao máximo dessa nova etapa. Conte conosco para o que precisar! 🚀😊";
-        default:
-          return "Desculpe, não entendi a sua pergunta. Tente novamente.";
       }
     }
   </script>
