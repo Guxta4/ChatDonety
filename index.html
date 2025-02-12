@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatDonety - Dark Mode</title>
+  <title>ChatDonety</title>
   <style>
     body {
       background-color: #121212;
@@ -134,11 +134,12 @@
     </div>
   </div>
 
-  <script>
+ <script>
     function sendMessage() {
       const input = document.getElementById('userInput');
       const messages = document.getElementById('messages');
       if (input.value.trim() !== "") {
+        console.log("Mensagem enviada: ", input.value); // Para depuração
         const userMessage = document.createElement('div');
         userMessage.classList.add('message', 'user-message');
         userMessage.innerText = input.value;
@@ -151,6 +152,6 @@
         messages.scrollTop = messages.scrollHeight;
       }
     }
-  </script>
+</script>
 </body>
 </html>
