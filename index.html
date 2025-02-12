@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,25 +46,6 @@
       align-items: center;
       justify-content: center;
       z-index: 10000;
-    }
-    .menu-popup ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-    .menu-popup ul li {
-      margin: 0.5rem 0;
-      cursor: pointer;
-    }
-    .menu-popup .close-button {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
     }
     .chat-container {
       flex: 1;
@@ -134,7 +115,12 @@
     </div>
   </div>
 
- <script>
+  <script>
+    function toggleMenu() {
+      // Função de exemplo para o botão do menu
+      alert("Menu foi clicado!");
+    }
+
     function sendMessage() {
       const input = document.getElementById('userInput');
       const messages = document.getElementById('messages');
@@ -150,8 +136,10 @@
         messages.appendChild(botMessage);
         input.value = "";
         messages.scrollTop = messages.scrollHeight;
+      } else {
+        console.log("Campo de entrada vazio.");
       }
     }
-</script>
+  </script>
 </body>
 </html>
